@@ -1,0 +1,28 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+
+authorize: ~/.ssh/homestead.pub
+
+keys:
+    - ~/.ssh/homestead
+
+folders:
+    - map: ~/USER/box
+      to: /home/vagrant/box
+
+sites:
+    - map: app.dev
+      to: /home/vagrant/box/app/public
+
+databases:
+    - app
+
+variables:
+    - key: APP_ENV
+      value: development
+    - key: VM_NAME
+      value: v_dev
+    - key: VM_VERSION
+      value: "0.1"
