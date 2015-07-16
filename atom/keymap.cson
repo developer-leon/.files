@@ -54,3 +54,15 @@
   'ctrl-down': 'window:focus-pane-below'
   'ctrl-left': 'window:focus-pane-on-left'
   'ctrl-right': 'window:focus-pane-on-right'
+
+'.platform-darwin .find-and-replace':
+  'alt-cmd-r': 'find-and-replace:toggle-regex-option'
+  'alt-cmd-a': 'find-and-replace:toggle-case-option'
+
+'.platform-darwin .find-and-replace .replace-container atom-text-editor':
+  'ctrl-cmd-enter': 'find-and-replace:replace-all'
+
+'.platform-darwin .project-find':
+  'alt-cmd-r': 'project-find:toggle-regex-option'
+  'alt-cmd-a': 'project-find:toggle-case-option'
+  'ctrl-cmd-enter': 'project-find:replace-all'
