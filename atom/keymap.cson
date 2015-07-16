@@ -66,3 +66,6 @@
   'alt-cmd-r': 'project-find:toggle-regex-option'
   'alt-cmd-a': 'project-find:toggle-case-option'
   'ctrl-cmd-enter': 'project-find:replace-all'
+
+'.platform-darwin':
+  'cmd-k cmd-k': 'tree-view:toggle'
