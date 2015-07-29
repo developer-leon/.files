@@ -1,0 +1,44 @@
+"*":
+  "exception-reporting":
+    userId: "USER_ID_HERE"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
+    excludeVcsIgnoredPaths: false
+    projectHome: "~/box/"
+  editor:
+    invisibles: {}
+    tabLength: 4
+    scrollPastEnd: true
+    showIndentGuide: true
+    softWrap: true
+    fontSize: 18
+    lineHeight: 2.5
+  "atom-material-ui":
+    depth: true
+    panelContrast: true
+    showTabIcons: true
+  "project-manager": {}
+  "linter-php":
+    phpExecutablePath: "/usr/bin/php"
+  "linter-csslint": {}
+  linter: {}
+  "linter-phpcs":
+    executablePath: "/Users/v/.composer/vendor/bin/phpcs"
+    warningSeverity: 8
+    tabWidth: 4
+  "linter-phpmd":
+    executablePath: "/Users/v/.composer/vendor/bin/phpmd"
+  "autocomplete-plus": {}
+  "atom-beautify":
+    analytics: false
+    beautifyEntireFileOnSave: false
+    php_cs_fixer_path: "/Users/v/.composer/vendor/bin/php-cs-fixer"
+  "advanced-new-file":
+    createFileInstantly: true
+    showFilesInAutoComplete: true
+  "file-icons": {}
