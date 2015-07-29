@@ -2,13 +2,13 @@ alias ..="cd .."
 alias ...="cd ../.."
 
 alias h='cd ~'
-alias c='clear'
+alias artisan='php artisan'
 
 function serve() {
 	if [[ "$1" && "$2" ]]
 	then
 		sudo dos2unix /vagrant/scripts/serve.sh
-		sudo bash /vagrant/scripts/serve.sh "$1" "$2"
+		sudo bash /vagrant/scripts/serve.sh "$1" "$2" 80
 	else
 		echo "Error: missing required parameters."
 		echo "Usage: "
@@ -16,14 +16,30 @@ function serve() {
 	fi
 }
 
-# CLI:
-alias _="sudo"
-alias c='composer'
-alias lsal='ls -al'
-alias lsalF='ls -alF'
+function serve-hhvm() {
+	if [[ "$1" && "$2" ]]
+	then
+		sudo dos2unix /vagrant/scripts/serve-hhvm.sh
+		sudo bash /vagrant/scripts/serve-hhvm.sh "$1" "$2" 80
+	else
+		echo "Error: missing required parameters."
+		echo "Usage: "
+		echo "  serve-hhvm domain path"
+	fi
+}
 
-# Laravel:
+# CLI:
+alias ....="cd ../../.."
+alias cd-="cd -"
+alias _="sudo"
+alias rm="rm -i"  # safety first
+alias lsalF='ls -alF'
+alias lsal='ls -al'
+alias lsd='ls -l | grep "^d"'
+alias sl='sudo slap'
 alias art='php artisan'
+alias c='composer'
+alias cda='composer dumpautoload -o'
 
 # V:
 alias box='cd /home/vagrant/box'
@@ -32,7 +48,7 @@ alias box_='cd /home/vagrant/box && cd'
 # Moar:
 alias nginx01='sudo service nginx restart'
 alias php01='sudo service php5-fpm restart'
-alias hhvm01='sudo service hhvm restart'
+alias hhvm01='sudo service hhvm stop && sudo service hhvm start'
 alias http01='nginx01 && php01 && hhvm01'
 
 alias nginx_sa='cd /etc/nginx/sites-available'
@@ -42,3 +58,8 @@ alias phpini='sudo slap /etc/php5/fpm/php.ini'
 alias nginxconf='sudo slap /etc/nginx/nginx.conf'
 alias nginxv='sudo slap /etc/nginx/conf.d/v.conf'
 alias nginxlog='cd var/log/nginx'
+
+# find shorthand
+function f() {
+    find . -name "$1" 2>&1 | grep -v 'Permission denied'
+}
