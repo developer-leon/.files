@@ -11,7 +11,7 @@ apm install linter-js-yaml linter-xmllint
 apm install linter-php linter-phpcs linter-phpmd
 
 # Helpers
-apm install project-manager advanced-new-file #tool-bar-main
+apm install project-manager advanced-new-file ctrl-last-tab #tool-bar-main
 
 # Theming
 apm install file-icons atom-material-syntax atom-material-ui
