@@ -44,16 +44,20 @@
   'ctrl-shift-}': 'editor:toggle-block-comments' # not such a feature :(
   'shift-cmd-D': null
   'cmd-/': null
+  'ctrl-shift-up': 'editor:move-line-up'
+  'ctrl-shift-down': 'editor:move-line-down'
+  'ctrl-cmd-up': 'editor:add-selection-above'
+  'ctrl-cmd-down': 'editor:add-selection-below'
 
-'body':
-  'ctrl-shift-up': 'pane:split-up'
-  'ctrl-shift-down': 'pane:split-down'
-  'ctrl-shift-left': 'pane:split-left'
-  'ctrl-shift-right': 'pane:split-right'
-  'ctrl-up': 'window:focus-pane-above'
-  'ctrl-down': 'window:focus-pane-below'
-  'ctrl-left': 'window:focus-pane-on-left'
-  'ctrl-right': 'window:focus-pane-on-right'
+#'body':
+  # 'ctrl-shift-up': 'pane:split-up'
+  # 'ctrl-shift-down': 'pane:split-down'
+  # 'ctrl-shift-left': 'pane:split-left'
+  # 'ctrl-shift-right': 'pane:split-right'
+  # 'ctrl-up': 'window:focus-pane-above'
+  # 'ctrl-down': 'window:focus-pane-below'
+  # 'ctrl-left': 'window:focus-pane-on-left'
+  # 'ctrl-right': 'window:focus-pane-on-right'
 
 '.platform-darwin .find-and-replace':
   'alt-cmd-r': 'find-and-replace:toggle-regex-option'
