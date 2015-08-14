@@ -73,3 +73,7 @@
 
 '.platform-darwin':
   'cmd-k cmd-k': 'tree-view:toggle'
+
+'atom-workspace':
+  'cmd-alt-right': 'last-cursor-position:next'
+  'cmd-alt-left': 'last-cursor-position:previous'
