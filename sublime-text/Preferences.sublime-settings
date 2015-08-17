@@ -1,6 +1,11 @@
-
 {
-	"always_show_minimap_viewport": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Material-Theme.sublime-theme",
+    "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+    "always_show_minimap_viewport": true,
 	"atomic_save": true,
 	"bold_folder_labels": true,
 	"caret_extra_top": 4,
@@ -17,10 +22,14 @@
 	"line_padding_bottom": 14,
 	"line_padding_top": 14,
 	"open_files_in_new_window": false,
-	"rulers":[80],
+	"rulers": [
+	80
+	],
 	"shift_tab_unindent": true,
 	"show_encoding": true,
 	"show_line_endings": true,
 	"theme": "Material-Theme.sublime-theme",
-	"word_wrap": "true"
+	"word_wrap": "true",
+	"indent_guide_options": [ "draw_active" ],
+	"overlay_scroll_bars": "enabled"
 }
