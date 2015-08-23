@@ -1,14 +1,34 @@
-# General
+ # General
 alias cd..='cd ..'
 alias h='cd ~'
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
+alias cd-="cd -"
 alias _="sudo"
 alias o='open .'
+alias rm="rm -i"
+alias cask='brew cask'
+
+alias star="tag --add starred"
+alias unstar="tag --remove starred"
+alias tagg="tag --add"
+alias tags="tag --all --match"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# List only directories
+alias lsd='ls -l | grep "^d"'
+alias lss='ls -lhS'
+alias look='qlmanage -p'
 
 alias lines="find . -name '*.php' | xargs wc -l"
 
 alias hosts='sudo slap /etc/hosts'
+alias aliases='slap /Users/v/.files/zsh/plugins/v-aliases/v-aliases.plugin.zsh'
 
 alias sl='sudo slap'
 alias ss='sudo subl'
@@ -34,10 +54,12 @@ alias c='composer'
 alias cda='composer dumpautoload -o'
 
 # Homestead
-alias vm='cd ~/.homestead'
-alias vmup='homestead up'
-alias vms='homestead status'
-alias vmssh='homestead ssh'
+alias box='cd ~/box'
+alias vm='homestead'
+alias cdvm='cd ~/.homestead'
+alias vmup='vm up'
+alias vms='vm status'
+alias vmssh='vm ssh'
 
 # Magento
 alias flush='./n98-magerun.phar cache:flush'
@@ -47,8 +69,7 @@ alias fuck='$(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
 
 # Git
-alias git='hub'
-alias gs='git status'
+alias gs='git status -s'
 
 alias ga='git add'                       ### $ ga my_file.php
 alias gaa='git add -a'
@@ -98,3 +119,17 @@ function gt() { git tag -a $1 -m $2; }       # gt 1.0 "Graduation!"
 alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 alias gll="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias glll="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+if [ -f ~/.files/.ssh/ssh.zsh ]; then
+    source ~/.files/.ssh/ssh.zsh
+fi
+
+# Create a new directory and enter it
+function md() {
+	mkdir -p "$@" && cd "$@"
+}
+
+# find shorthand
+function f() {
+    find . -name "$1" 2>&1 | grep -v 'Permission denied'
+}
