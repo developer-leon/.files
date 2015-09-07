@@ -7,7 +7,7 @@ alias ....="cd ../../.."
 alias cd-="cd -"
 alias _="sudo"
 alias o='open .'
-alias rm="rm -i"
+alias rm="rm -i"  # safety first
 alias cask='brew cask'
 
 alias star="tag --add starred"
@@ -26,6 +26,8 @@ alias lss='ls -lhS'
 alias look='qlmanage -p'
 
 alias lines="find . -name '*.php' | xargs wc -l"
+
+alias gitio="rb /Users/v/.files/scripts/gitio.rb"
 
 alias hosts='sudo slap /etc/hosts'
 alias aliases='slap /Users/v/.files/zsh/plugins/v-aliases/v-aliases.plugin.zsh'
@@ -72,6 +74,8 @@ alias FUCK='fuck'
 alias gs='git status -s'
 
 alias ga='git add'                       ### $ ga my_file.php
+alias gap='git add -p'
+alias gai='git add -i'
 alias gaa='git add -a'
 alias gaA='git add -A'                   # this command also tracks renamed files
 
@@ -94,7 +98,13 @@ alias gp='git pull'
 alias gpr='git pull --rebase'
 alias gf='git fetch'
 alias gr='git rebase'
-alias gri='git rebase -i'
+function gri() {
+    if [ ${#1} -lt 6 ]; then
+        git rebase -i HEAD~"$1";
+    else
+        git rebase -i "$1";
+    fi
+}
 
 alias gpp='git push'
 alias gppt='git push --tags'
@@ -106,6 +116,7 @@ alias grs='git reset --soft HEAD~1'
 alias grs~='git reset --soft HEAD~'
 
 alias gdf='git diff'
+alias gdfs='git diff --staged'
 
 alias gcp='git cherry-pick'
 alias gcpx='git cherry-pick -x'
