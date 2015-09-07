@@ -106,9 +106,12 @@ function gri() {
     fi
 }
 
-alias gpp='git push'
 alias gppt='git push --tags'
-alias gppu='git push -u origin'
+function gpp() {
+    branch=$(git rev-parse --abbrev-ref HEAD);
+    echo "pushing to origin/${branch}";
+    git push -u origin "${branch}";
+}
 
 alias grh='git reset --hard HEAD~1'
 alias grh~='git reset --hard HEAD~'
